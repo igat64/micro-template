@@ -22,4 +22,4 @@ npm start
 
 ### License
 
-MIT
+[MIT](https://github.com/igat64/micro-template/blob/master/LICENSE)
