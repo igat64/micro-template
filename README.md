@@ -1,5 +1,21 @@
 # micro-template
 
+### Core concepts
+
+If the web application accepts the request and returns the response, it is reasonable to express it with a function.
+Indeed, applications are arbitrarily complex. But they accept the request and return the response, so at the abstract level, it is a function.
+
+A router is also a function that accepts a request, determines the necessary handler, and returns a response.
+
+A request handler is a function that accepts a request and returns a response.
+The middleware technique is best suited to add intermediate logic, such as query parameters, sessions, cookies, access rights.
+
+Middleware is also a function that accepts a handler function and returns a new handler with augmented logic.
+Also, each middleware can break the chain, depending on the circumstances.
+Pattern decorator is a special case of Middleware. Therefore, our middleware is a bit different from those that are taken in Express.
+
+Each heavy abstraction will replace by a function. This is convenient because, unlike classes, functions are composable.
+
 ### Core Components
 
 #### Application Server — `lib/server.js`
