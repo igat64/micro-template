@@ -1,24 +1,23 @@
 # micro-template
 
-### Usage
+### Core Components
 
-- Clone the repository
+#### Application Server — `lib/server.js`
 
-```bash
-git clone https://github.com/igat64/micro-template.git
-```
+Manages the lifecycle of the HTTP server. There are two functions that control the lifecycle of the application, these are the `startServer` and the `stopServer` functions respectively.
 
-- Install the dependencies
+#### Application Handler — `lib/app.js`
 
-```bash
-npm install
-```
+Responsible for aggregating all the routes and wrapping them with any necessary middleware.
 
-- Start the microservice
+#### Application Middleware — `lib/middleware`
 
-```bash
-npm start
-```
+This folder is reserved for any wrapper functions that are used to modify the requests and responses. The main purpose of the middleware is to provide a central place for handling common tasks such as request validation.
+Middleware is just a wrapper (decorator) for the request handler.
+
+#### Application Routes — `lib/routes`
+
+Aggregates the routes for handling all the requests to our application. All routes handlers are there.
 
 ### Template structure
 
@@ -49,7 +48,32 @@ npm start
 │   └── server.js
 ├── package-lock.json
 └── package.json
+```
 
+### Usage
+
+- Clone the repository
+
+```bash
+git clone https://github.com/igat64/micro-template.git
+```
+
+- Install the dependencies
+
+```bash
+npm install
+```
+
+- Start the microservice
+
+```bash
+npm start
+```
+
+- Start in Development mode
+
+```bash
+npm run start:dev
 ```
 
 ### License
