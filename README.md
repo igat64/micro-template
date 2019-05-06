@@ -35,6 +35,10 @@ Middleware is just a wrapper (decorator) for the request handler.
 
 Aggregates the routes for handling all the requests to our application. All routes handlers are there.
 
+#### Application Api — `api/`
+
+Core functionality
+
 ### Template structure
 
 ```
@@ -42,6 +46,9 @@ Aggregates the routes for handling all the requests to our application. All rout
 ├── LICENSE
 ├── README.md
 ├── lib
+│   ├── api
+│   │   └── books
+│   │       └── index.js
 │   ├── app.js
 │   ├── config
 │   │   ├── index.js
@@ -49,19 +56,20 @@ Aggregates the routes for handling all the requests to our application. All rout
 │   │   └── validate.js
 │   ├── logger.js
 │   ├── middleware
+│   │   ├── __test__
+│   │   │   └── wrap-json-body.unit.test.js
 │   │   ├── index.js
-│   │   ├── wrap-ajv-validation.js
 │   │   ├── wrap-api-handler.js
 │   │   ├── wrap-catch-error.js
 │   │   └── wrap-json-body.js
 │   ├── routes
-│   │   ├── books
-│   │   │   ├── index.js
-│   │   │   └── schema.js
 │   │   ├── health-check.js
 │   │   ├── index.js
 │   │   └── not-found.js
-│   └── server.js
+│   ├── server.js
+│   └── util
+│       └── fkit
+│           └── index.js
 ├── package-lock.json
 └── package.json
 ```
@@ -91,7 +99,3 @@ npm start
 ```bash
 npm run start:dev
 ```
-
-### License
-
-[MIT](https://github.com/igat64/micro-template/blob/master/LICENSE)
