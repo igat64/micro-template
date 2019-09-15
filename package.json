@@ -4,8 +4,8 @@
   "description": "",
   "main": "lib/server.js",
   "scripts": {
-    "start:dev": "nodemon lib/server.js",
-    "start": "node lib/server.js",
+    "start:dev": "nodemon lib/index.js",
+    "start": "node lib/index.js",
     "test": "jest"
   },
   "jest": {
